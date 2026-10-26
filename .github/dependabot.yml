@@ -1,5 +1,6 @@
 version: 2
 updates:
+  # Weekly version updates; security updates are handled independently by Dependabot alerts.
   # Enable version updates for npm
   - package-ecosystem: 'npm'
     directory: '/'
@@ -47,16 +48,3 @@ updates:
     commit-message:
       prefix: 'chore(ci)'
 
-  # Security updates for npm
-  - package-ecosystem: 'npm'
-    directory: '/'
-    schedule:
-      interval: 'daily'
-    labels:
-      - 'security'
-      - 'npm'
-    open-pull-requests-limit: 5
-    commit-message:
-      prefix: 'fix(deps)'
-    # Always create security PRs immediately
-    # Don't wait for weekly schedule
